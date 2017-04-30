@@ -1,0 +1,28 @@
+Notes on test shooting scene
+----------------------------
+
+primarily 2 objects
+
+FiringEnemy and TargetObject
+
+
+TargetObject - 
+---------------
+right now this has a RigidBody
+a simple mover script with public speed variable, just to test movement
+
+
+FiringEnemy
+---------------
+has a firingRange child which has the following components
+firing script with SFX sound array, barrel transform position, and some shooting public tweaks to test
+Line Renderer component just for visuals
+Capsule collider to provide attack range and targets trigger entry into this volume.
+
+The Emitter child of FiringEnemy, is purely for visuals, this is whats dragged into gun barrel public slot on FiringEnemy
+
+
+
+Code is messy, but im just testing at the moment.
+
+TODO : see if this idea works, Tidy Code, Get a sample material for laser
