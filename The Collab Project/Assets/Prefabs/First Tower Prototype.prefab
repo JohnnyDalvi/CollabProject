@@ -344,7 +344,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1387592018611108}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.9997966, y: -4.7346966e-16, z: 21.323175}
+  m_LocalPosition: {x: 1.9997966, y: -0, z: -19.05}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4806149433236078}
@@ -483,9 +483,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 1020278081846668}
+  lightningPositions:
+  - {fileID: 4126182479202432}
+  - {fileID: 4196707953314408}
+  - {fileID: 4184451628611912}
+  - {fileID: 4846644765014966}
+  - {fileID: 4570363933809768}
+  - {fileID: 4053091489061272}
+  - {fileID: 4524344481914450}
+  - {fileID: 4682997699460326}
   verticalMovimentLimit: 0.15
   verticalMovimentSpeed: 0.3
   rotationSpeed: 1000
+  lightningParticle: {fileID: 1259731074012962, guid: ae94367a51259ad4d983e5737d161971,
+    type: 2}
 --- !u!215 &215590216675593768
 ReflectionProbe:
   m_ObjectHideFlags: 1
