@@ -17,6 +17,7 @@ public class FiringScriptTest : MonoBehaviour {
 	public Transform gunBarrel;
 
 	[Header ("Debug information")]
+	public bool ShowDebugInfo;
 	[SerializeField]private int EnemiesInRangeCount; // just for debug
 	[SerializeField]private Transform currentTarget;
 
@@ -44,12 +45,14 @@ public class FiringScriptTest : MonoBehaviour {
 			foreach( int key in EnemiesInRange.Keys)
 			{
 				enemyKeysList.Add(key);
-				Debug.Log(key);
 			}
 	
 			int selectedKey = enemyKeysList[Random.Range(0, enemyKeysList.Count)];
 			currentTarget =  EnemiesInRange[selectedKey];
-			Debug.Log(currentTarget);
+			#if UNITY_EDITOR
+				if(ShowDebugInfo)
+				Debug.Log(currentTarget);
+			#endif
 			StartCoroutine(FireAtEnemy(currentTarget));
 		}
 	}
@@ -60,8 +63,11 @@ public class FiringScriptTest : MonoBehaviour {
 	{
 		if(!col.CompareTag("Damagable"))
 		{ return; }
-
 		int id = (col.gameObject.GetHashCode());
+		#if UNITY_EDITOR
+		if(ShowDebugInfo)
+			Debug.Log(id + " Entered range");
+		#endif
 		if(!EnemiesInRange.ContainsKey(id))
 		{
 			EnemiesInRange.Add(id, col.gameObject.transform);
@@ -74,6 +80,10 @@ public class FiringScriptTest : MonoBehaviour {
 		if(!col.CompareTag("Damagable"))
 		{ return; }
 		int id = (col.gameObject.GetHashCode());
+		#if UNITY_EDITOR
+		if(ShowDebugInfo)
+			Debug.Log(id + " left range");
+		#endif
 		if(!EnemiesInRange.ContainsKey(id))
 			EnemiesInRange.Remove(id);
 	}

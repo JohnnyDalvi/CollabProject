@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnergyBall : MonoBehaviour {
 
-    // Darren, I'm just doing this script in order to test the tower animation, you can freely edit it as you want
+	// Darren, I'm just doing this script in order to test the tower animation, you can freely edit it as you want, 
+	//nope, looks just dandy the way it is :)
 
     public GameObject energyBall;
     public Transform[] lightningPositions;
